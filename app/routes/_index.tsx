@@ -13,13 +13,16 @@ export const meta: MetaFunction = () => {
 export default function Index() {
 	return (
 		<main>
-			<p className="code">Hi, my name is</p>
-			<h1 className="title">Jack Kinsey.</h1>
-			<p className="title">I build web and game apps.</p>
-			<p>
-				I'm a full stack web and game developer focused on building exceptional,
-				high-quality, and fun websites, games, and other applications.
-			</p>
+			<section>
+				<p className="code">Hi, my name is</p>
+				<h1 className="title">Jack Kinsey.</h1>
+				<p className="title">I build web and game apps.</p>
+				<p>
+					I'm a full stack web and game developer focused on building
+					exceptional, high-quality, and fun websites, games, and other
+					applications.
+				</p>
+			</section>
 
 			<section>
 				<h2 className="title">About Me</h2>
