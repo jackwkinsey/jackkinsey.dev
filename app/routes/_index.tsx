@@ -14,9 +14,9 @@ export default function Index() {
 	return (
 		<main>
 			<section>
-				<p className="code">Hi, my name is</p>
-				<h1 className="title">Jack Kinsey.</h1>
-				<p className="title">I build web and game apps.</p>
+				<p>Hi, my name is</p>
+				<h1>Jack Kinsey.</h1>
+				<p>I build web &amp; game apps.</p>
 				<p>
 					I'm a full stack web and game developer focused on building
 					exceptional, high-quality, and fun websites, games, and other
@@ -25,7 +25,7 @@ export default function Index() {
 			</section>
 
 			<section>
-				<h2 className="title">About Me</h2>
+				<h2>About Me</h2>
 				<div>
 					<img src="images/jack.jpg" alt="Jack Kinsey" />
 				</div>
@@ -62,7 +62,7 @@ export default function Index() {
 			</section>
 
 			<section>
-				<h2 className="title">Skills</h2>
+				<h2>Skills</h2>
 				<div>
 					<p>TODO: add radar chart for frontend skills</p>
 					<p>TODO: add radar chart for backend skills</p>
@@ -71,17 +71,17 @@ export default function Index() {
 			</section>
 
 			<section>
-				<h2 className="title">My Developer Story</h2>
+				<h2>My Developer Story</h2>
 				<div>TODO: add developer story timeline</div>
 			</section>
 
 			<section>
-				<h2 className="title">Featured Projects</h2>
+				<h2>Featured Projects</h2>
 				<div>TODO: add 3 featured projects</div>
 			</section>
 
 			<section>
-				<h2 className="title">Featured Articles</h2>
+				<h2>Featured Articles</h2>
 				<div>TODO: add 3 featured articles from blog</div>
 			</section>
 		</main>
