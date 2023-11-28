@@ -115,7 +115,7 @@ export default function Index() {
 
 			<section className="mt-20">
 				<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10">
-					My Developer Story
+					Dev Story
 				</h2>
 				<div>TODO: add developer story timeline</div>
 			</section>
