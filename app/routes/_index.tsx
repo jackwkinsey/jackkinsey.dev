@@ -12,31 +12,40 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
 	return (
-		<main>
-			<section>
-				<p>Hi, my name is</p>
-				<h1>Jack Kinsey.</h1>
-				<p>I build web &amp; game apps.</p>
-				<p>
+		<main className="p-4 md:mx-auto md:my-8 md:px-8 md:max-w-4xl text-zinc-500">
+			<section className="md:h-[500px]">
+				<p className="font-mono text-xs mb-8 text-violet-900">Hi, my name is</p>
+				<h1 className="font-serif text-4xl text-zinc-900">Jack Kinsey.</h1>
+				<p className="font-serif text-2xl">I build web &amp; game apps.</p>
+				<p className="mt-8 md:w-1/2 text-center md:text-left">
 					I'm a full stack web and game developer focused on building
 					exceptional, high-quality, and fun websites, games, and other
 					applications.
 				</p>
+				<div className="text-violet-900 border-4 border-violet-900 p-4 rounded w-40 text-center mx-auto md:mx-0 mt-8 md:mt-36">
+					<a href="mailto:jack.w.kinsey@gmail.com">Get In Touch</a>
+				</div>
 			</section>
 
-			<section>
-				<h2>About Me</h2>
+			<section className="mt-20">
+				<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10">
+					About Me
+				</h2>
 				<div>
-					<img src="images/jack.jpg" alt="Jack Kinsey" />
+					<img
+						src="images/jack.jpg"
+						alt="Jack Kinsey"
+						className="rounded-full w-52 md:w-80 m-auto mb-8"
+					/>
 				</div>
 				<article>
-					<p>
+					<p className="mb-4">
 						Greetings! I'm Jack, a seasoned full-stack web developer with a rich
 						history spanning over 9 years in the industry. As the proud founder
 						of Hexbit Studios, a small independent game studio, I bring a unique
 						blend of technical expertise and creative flair to my work.
 					</p>
-					<p>
+					<p className="mb-4">
 						My journey in the realm of software development has been diverse,
 						with a primary focus on web app projects. I've had the privilege of
 						contributing to various teams and assuming different roles, allowing
@@ -45,7 +54,7 @@ export default function Index() {
 						robust app backends; I thrive on sharing my knowledge and mentoring
 						fellow teammates.
 					</p>
-					<p>
+					<p className="mb-4">
 						In addition to my web development pursuits, I channel my creativity
 						into the realm of game design. Whether it's devising captivating
 						game worlds or implementing innovative mechanics, I find immense joy
@@ -61,28 +70,61 @@ export default function Index() {
 				</article>
 			</section>
 
-			<section>
-				<h2>Skills</h2>
+			<section className="mt-20">
+				<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10">
+					Skills
+				</h2>
+				<div className="hidden md:block">
+					<p className="mb-8">
+						I have had the privilege of working with a wide array of
+						technologies over the course of my career.
+					</p>
+					<p className="mb-4">Some of my favorites are:</p>
+					<div className="grid grid-cols-4 mb-8">
+						<ul>
+							<li>React</li>
+							<li>JavaScript</li>
+							<li>TypeScript</li>
+							<li>Vue</li>
+						</ul>
+						<ul>
+							<li>React Native</li>
+							<li>Node</li>
+							<li>Postgres</li>
+							<li>MongoDB</li>
+						</ul>
+						<ul>
+							<li>Tailwind CSS</li>
+							<li>Prisma</li>
+							<li>Next</li>
+							<li>Remix</li>
+						</ul>
+						<ul>
+							<li>GraphQL</li>
+							<li>Apollo</li>
+							<li>Vercel</li>
+							<li>Godot Game Engine</li>
+						</ul>
+					</div>
+				</div>
 				<div>
 					<p>TODO: add radar chart for frontend skills</p>
 					<p>TODO: add radar chart for backend skills</p>
-					<p>TODO: add radar chart for game dev skills</p>
 				</div>
 			</section>
 
-			<section>
-				<h2>My Developer Story</h2>
+			<section className="mt-20">
+				<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10">
+					My Developer Story
+				</h2>
 				<div>TODO: add developer story timeline</div>
 			</section>
 
-			<section>
-				<h2>Featured Projects</h2>
+			<section className="mt-20 hidden md:block">
+				<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10">
+					Featured Projects
+				</h2>
 				<div>TODO: add 3 featured projects</div>
-			</section>
-
-			<section>
-				<h2>Featured Articles</h2>
-				<div>TODO: add 3 featured articles from blog</div>
 			</section>
 		</main>
 	)
