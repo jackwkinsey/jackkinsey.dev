@@ -51,7 +51,6 @@ const proficiencies: { [index: string]: any } = {
 }
 
 const proficiencyData = Object.keys(proficiencies).map(proficiencyGroup => {
-	console.log(proficiencyGroup)
 	return {
 		labels: Object.keys(proficiencies[proficiencyGroup]),
 		datasets: [
