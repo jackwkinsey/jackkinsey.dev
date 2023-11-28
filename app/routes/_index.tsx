@@ -9,6 +9,7 @@ import {
 	RadialLinearScale,
 	Tooltip,
 } from 'chart.js'
+import { useState } from 'react'
 import RadarChart from '~/components/RadarChart'
 
 export const meta: MetaFunction = () => {
@@ -67,6 +68,7 @@ const proficiencyData = Object.keys(proficiencies).map(proficiencyGroup => {
 Chart.register(Filler, LineElement, PointElement, RadialLinearScale, Tooltip)
 
 export default function Index() {
+	const [over, setOver] = useState(false)
 	const radarChartOptions: ChartOptions<'radar'> = {
 		scales: {
 			r: {
@@ -75,6 +77,9 @@ export default function Index() {
 				ticks: {
 					display: false,
 					stepSize: 20,
+				},
+				grid: {
+					circular: true,
 				},
 			},
 		},
@@ -101,12 +106,20 @@ export default function Index() {
 				</h2>
 				<div>
 					<img
-						src="images/jack.jpg"
+						onMouseOver={() => setOver(true)}
+						onMouseOut={() => setOver(false)}
+						src={over ? 'images/blue-steel.jpg' : 'images/jack.jpg'}
 						alt="Jack Kinsey"
-						className="rounded-full w-52 md:w-80 m-auto mb-8"
+						className="rounded-full w-52 md:w-80 m-auto mb-4 shadow-[15px_8px_0px_rgba(76,29,149)]"
 					/>
+					<p
+						className={over ? 'text-center visible' : 'text-center invisible'}
+						aria-hidden
+					>
+						✨BLUE STEEL✨
+					</p>
 				</div>
-				<article>
+				<article className="mt-8">
 					<p className="mb-4">
 						Greetings! I'm Jack, a seasoned full-stack web developer with a rich
 						history spanning over 9 years in the industry. As the proud founder
