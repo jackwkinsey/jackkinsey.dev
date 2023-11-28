@@ -1,4 +1,15 @@
 import type { MetaFunction } from '@vercel/remix'
+import {
+	type ChartData,
+	type ChartOptions,
+	Chart,
+	Filler,
+	LineElement,
+	PointElement,
+	RadialLinearScale,
+	Tooltip,
+} from 'chart.js'
+import RadarChart from '~/components/RadarChart'
 
 export const meta: MetaFunction = () => {
 	return [
@@ -10,7 +21,64 @@ export const meta: MetaFunction = () => {
 	]
 }
 
+const proficiencies: { [index: string]: any } = {
+	'Frontend Proficiencies': {
+		JavaScript: 95,
+		TypeScript: 80,
+		React: 95,
+		ReactNative: 70,
+		Vue: 70,
+		Tailwind: 75,
+		Sass: 50,
+		Accessibility: 45,
+		Storybook: 50,
+		TDD: 80,
+		Electron: 55,
+	},
+	'Backend Proficiencies': {
+		Node: 90,
+		MySQL: 75,
+		Postgres: 85,
+		SQLite: 65,
+		MongoDB: 80,
+		'Next.js': 75,
+		Remix: 80,
+		Python: 50,
+		GraphQL: 60,
+		'.NET/C#': 40,
+		TDD: 80,
+	},
+}
+
+const proficiencyData = Object.keys(proficiencies).map(proficiencyGroup => {
+	return {
+		labels: Object.keys(proficiencies[proficiencyGroup]),
+		datasets: [
+			{
+				data: Object.values(proficiencies[proficiencyGroup]),
+				fill: true,
+				backgroundColor: 'rgba(76, 29, 149, 0.4)',
+				borderColor: 'rgb(76, 29, 149)',
+			},
+		],
+	} as ChartData<'radar'>
+})
+
+Chart.register(Filler, LineElement, PointElement, RadialLinearScale, Tooltip)
+
 export default function Index() {
+	const radarChartOptions: ChartOptions<'radar'> = {
+		scales: {
+			r: {
+				min: 0,
+				max: 100,
+				ticks: {
+					display: false,
+					stepSize: 20,
+				},
+			},
+		},
+	}
 	return (
 		<main className="p-4 md:mx-auto md:my-8 md:px-8 md:max-w-4xl text-zinc-500">
 			<section className="md:h-[500px]">
@@ -22,7 +90,7 @@ export default function Index() {
 					exceptional, high-quality, and fun websites, games, and other
 					applications.
 				</p>
-				<div className="text-violet-900 border-4 border-violet-900 p-4 rounded w-40 text-center mx-auto md:mx-0 mt-8 md:mt-36">
+				<div className="text-violet-900 border-4 border-violet-900 p-4 rounded-[5px] w-40 text-center mx-auto md:mx-0 mt-8 md:mt-36">
 					<a href="mailto:jack.w.kinsey@gmail.com">Get In Touch</a>
 				</div>
 			</section>
@@ -108,8 +176,16 @@ export default function Index() {
 					</div>
 				</div>
 				<div>
-					<p>TODO: add radar chart for frontend skills</p>
-					<p>TODO: add radar chart for backend skills</p>
+					<RadarChart
+						chartData={proficiencyData[0]}
+						options={radarChartOptions}
+						title="Frontend Proficiencies"
+					/>
+					<RadarChart
+						chartData={proficiencyData[1]}
+						options={radarChartOptions}
+						title="Backend Proficiencies"
+					/>
 				</div>
 			</section>
 
