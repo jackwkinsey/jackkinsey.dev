@@ -90,7 +90,7 @@ export default function Index() {
 					exceptional, high-quality, and fun websites, games, and other
 					applications.
 				</p>
-				<div className="text-violet-900 border-4 border-violet-900 p-4 rounded w-40 text-center mx-auto md:mx-0 mt-8 md:mt-36">
+				<div className="text-violet-900 border-4 border-violet-900 p-4 rounded-[5px] w-40 text-center mx-auto md:mx-0 mt-8 md:mt-36">
 					<a href="mailto:jack.w.kinsey@gmail.com">Get In Touch</a>
 				</div>
 			</section>
