@@ -11,6 +11,8 @@ import {
 } from 'chart.js'
 import { useState } from 'react'
 import RadarChart from '~/components/RadarChart'
+import StoryCard from '~/components/StoryCard'
+import storyData from '~/data/dev_story_data'
 
 export const meta: MetaFunction = () => {
 	return [
@@ -81,11 +83,16 @@ export default function Index() {
 				grid: {
 					circular: true,
 				},
+				pointLabels: {
+					font: {
+						size: 14,
+					},
+				},
 			},
 		},
 	}
 	return (
-		<main className="p-4 md:mx-auto md:my-8 md:px-8 md:max-w-4xl text-zinc-500">
+		<main className="p-4 md:mx-auto md:my-8 md:px-8 md:max-w-6xl text-zinc-500">
 			<section className="md:h-[500px]">
 				<p className="font-mono text-xs mb-8 text-violet-900">Hi, my name is</p>
 				<h1 className="font-serif text-4xl text-zinc-900">Jack Kinsey.</h1>
@@ -162,25 +169,25 @@ export default function Index() {
 					</p>
 					<p className="mb-4">Some of my favorites are:</p>
 					<div className="grid grid-cols-4 mb-8">
-						<ul>
+						<ul className="list-none">
 							<li>React</li>
 							<li>JavaScript</li>
 							<li>TypeScript</li>
 							<li>Vue</li>
 						</ul>
-						<ul>
+						<ul className="list-none">
 							<li>React Native</li>
 							<li>Node</li>
 							<li>Postgres</li>
 							<li>MongoDB</li>
 						</ul>
-						<ul>
+						<ul className="list-none">
 							<li>Tailwind CSS</li>
 							<li>Prisma</li>
 							<li>Next</li>
 							<li>Remix</li>
 						</ul>
-						<ul>
+						<ul className="list-none">
 							<li>GraphQL</li>
 							<li>Apollo</li>
 							<li>Vercel</li>
@@ -206,10 +213,38 @@ export default function Index() {
 				<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10">
 					Dev Story
 				</h2>
-				<div>TODO: add developer story timeline</div>
+				<div className="flex flex-col relative my-[40px] lg:after:bg-zinc-200 lg:after:content-[''] lg:after:absolute lg:after:left-[calc(50%-2px)] lg:after:w-1 lg:after:h-full">
+					{storyData.map(data => {
+						const {
+							type,
+							start,
+							end,
+							headerImage,
+							headerTitle,
+							headerSubtitle,
+							headerTags,
+							bodyMarkdown,
+							links,
+						} = data
+						return (
+							<StoryCard
+								type={type}
+								start={start}
+								end={end}
+								headerImage={headerImage}
+								headerTitle={headerTitle}
+								headerSubtitle={headerSubtitle}
+								headerTags={headerTags}
+								bodyMarkdown={bodyMarkdown}
+								links={links}
+								key={start.getTime()}
+							/>
+						)
+					})}
+				</div>
 			</section>
 
-			<section className="mt-20 hidden md:block">
+			<section className="mt-20 hidden">
 				<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10">
 					Featured Projects
 				</h2>
