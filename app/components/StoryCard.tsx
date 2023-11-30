@@ -127,7 +127,18 @@ export default function StoryCard({
 						<span className="lg:hidden">{typeIcon}</span>
 						{type.toLocaleUpperCase()}
 					</span>
-					<span>
+					<span className="md:hidden">
+						{start.toLocaleString('default', { month: 'short' })}{' '}
+						{start.getFullYear()}
+						{end && ' - '}
+						{end &&
+							(end === 'current'
+								? 'CURRENT'
+								: `${end.toLocaleString('default', {
+										month: 'short',
+								  })} ${end.getFullYear()}`)}
+					</span>
+					<span className="hidden md:inline">
 						{start.toLocaleString('default', { month: 'long' })}{' '}
 						{start.getFullYear()}
 						{end && ' - '}
