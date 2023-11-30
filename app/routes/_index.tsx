@@ -106,7 +106,9 @@ export default function Index() {
 					<h1 className="font-serif text-4xl text-zinc-900 dark:text-zinc-100">
 						Jack Kinsey.
 					</h1>
-					<p className="font-serif text-4xl">I build web &amp; game apps.</p>
+					<p className="font-serif text-2xl md:text-4xl">
+						I build web &amp; game apps.
+					</p>
 					<p className="mt-8 md:w-1/2 text-center md:text-left">
 						I'm a full stack web and game developer focused on building
 						exceptional, high-quality, and fun websites, games, and other

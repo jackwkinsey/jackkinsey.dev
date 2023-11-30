@@ -47,7 +47,6 @@ export default function StoryCard({
 	bodyMarkdown,
 	links,
 }: StoryCardProps) {
-	console.log('links:', links, headerTitle)
 	const tags = headerTags?.map(tag => {
 		return <Tag key={tag} text={tag} />
 	})
