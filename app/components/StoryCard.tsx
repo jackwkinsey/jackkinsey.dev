@@ -117,7 +117,7 @@ export default function StoryCard({
 		<div className="lg:[&>div>div.circle]:even:right-auto lg:[&>div>div.circle]:even:left-[-50px] mb-8 lg:mb-0 lg:odd:pr-8 lg:even:pl-8 lg:w-1/2 lg:even:self-end lg:[&>div]:after:content-[' '] lg:[&>div]:after:bg-zinc-100 lg:[&>div]:after:absolute lg:[&>div]:after:right-[-7.5px] lg:[&>div]:after:top-1 lg:[&>div]:after:rotate-45 lg:[&>div]:after:w-[15px] lg:[&>div]:after:h-[15px] lg:[&>div]:after:shadow-[2px_-2px_4px_rgba(0,0,0,0.2)] lg:[&>div]:even:after:right-auto lg:[&>div]:even:after:left-[-7.5px] lg:[&>div]:even:after:shadow-[-2px_2px_4px_rgba(0,0,0,0.2)] dark:lg:[&>div]:after:bg-zinc-900 dark:lg:[&>div]:even:after:shadow-[-1px_1px_0px_rgb(63,63,70)] dark:lg:[&>div]:after:shadow-[1px_-1px_0px_rgb(63,63,70)]">
 			<div className="border rounded border-zinc-300 p-2 relative shadow-[0px_0px_5px_rgba(0,0,0,0.3)] dark:border-zinc-700">
 				{/* type */}
-				<div className="font-mono text-sm flex justify-between border-b-2 mb-2">
+				<div className="font-mono text-sm flex justify-between border-b-2 mb-2 border-zinc-300 dark:border-zinc-700 pb-1">
 					<span className="flex items-center">
 						<span className="lg:hidden">{typeIcon}</span>
 						{type.toLocaleUpperCase()}
