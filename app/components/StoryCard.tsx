@@ -19,7 +19,7 @@ type Image = {
 
 function Tag({ text }: { text: string }) {
 	return (
-		<div className="font-mono text-xs text-zinc-50 bg-violet-900 rounded p-[5px] mr-1 mb-2">
+		<div className="font-mono text-xs text-violet-200 bg-violet-900 rounded p-[5px] mr-1 mb-2">
 			{text}
 		</div>
 	)
@@ -56,7 +56,9 @@ export default function StoryCard({
 			<a
 				key={link.url}
 				href={link.url}
-				className={`underline text-violet-900 ${index > 0 ? 'ml-4' : ''}`}
+				className={`underline underline-offset-2 text-violet-900 ${
+					index > 0 ? 'ml-4' : ''
+				}`}
 				target="blank"
 			>
 				{link.text || link.url}

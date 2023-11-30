@@ -119,6 +119,19 @@ Credentials for test user:
 - Created microsites using React that consumed Node and .NET microservices.
     `,
 	},
+	// 	{
+	// 		type: 'app',
+	// 		start: new Date('August 1, 2020'),
+	// 		headerTitle: 'Roll Init',
+	// 		headerSubtitle: 'Track your D&D encounters',
+	// 		headerTags: ['React', 'Next.js', 'TypeScript', 'Prisma', 'MongoDB'],
+	// 		bodyMarkdown: `
+	// This web app allows users to sign in and manage encounters for the popular table top role playing game, Dungeons & Dragons, specifically for the 5th edition of this game.
+	// \n
+	// Game Managers can create and save their players' characters to use in encounters. By adding their chosen players and any monster that is found in the free and open D&D 5th edition SRD API to an encounter, Game Managers can track and run their encounters easily.
+	//     `,
+	// 		links: [{ url: 'https://www.rollinit.xyz', text: 'try it out' }],
+	// 	},
 	{
 		type: 'position',
 		start: new Date('August 1, 2019'),
@@ -229,6 +242,22 @@ Credentials for test user:
 - Helped fix bugs that were found by QA team in flagship software, Oncochart.
 - Implemented small, new features requested by users and management team.
 - Worked on web app to enhance the experience of seminar attendees.
+    `,
+	},
+	{
+		type: 'education',
+		start: new Date('September 1, 2007'),
+		end: new Date('December 1, 2011'),
+		headerImage: {
+			src: '/images/snu-logo.png',
+			altText: 'Southern Nazarene University logo',
+		},
+		headerTitle: 'Southern Nazarene University',
+		headerSubtitle: 'B.S. Computer Science',
+		bodyMarkdown: `
+- Participated in multiple volunteer internships as a lab and programming assistant for my professor, Dr. Brent Eskridge.
+- Completed coursework which primarily used Java, but also gained experience working with relational databases, Python, C/C++, and basic networking.
+- Topics covered: computer programming, object-oriented programming, version control, data structures, design patterns, algorithms, basic artificial intelligence.
     `,
 	},
 ]
