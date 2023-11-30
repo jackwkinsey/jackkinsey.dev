@@ -69,14 +69,13 @@ export default function StoryCard({
 	let typeIcon
 	const iconSize = 20
 	const iconStrokeWidth = 2
-	const iconColor = '#18181b'
-	const iconClass = 'inline mr-1 lg:my-[2px] lg:mx-auto lg:block'
+	const iconClass =
+		'inline mr-1 lg:my-[2px] lg:mx-auto lg:block text-zinc-900 dark:text-zinc-400'
 	if (type === 'app') {
 		typeIcon = (
 			<Code2
 				size={iconSize}
 				strokeWidth={iconStrokeWidth}
-				color={iconColor}
 				className={iconClass}
 			/>
 		)
@@ -85,7 +84,6 @@ export default function StoryCard({
 			<BadgeCheck
 				size={iconSize}
 				strokeWidth={iconStrokeWidth}
-				color={iconColor}
 				className={iconClass}
 			/>
 		)
@@ -94,7 +92,6 @@ export default function StoryCard({
 			<GraduationCap
 				size={iconSize}
 				strokeWidth={iconStrokeWidth}
-				color={iconColor}
 				className={iconClass}
 			/>
 		)
@@ -103,7 +100,6 @@ export default function StoryCard({
 			<Gamepad
 				size={iconSize}
 				strokeWidth={iconStrokeWidth}
-				color={iconColor}
 				className={iconClass}
 			/>
 		)
@@ -112,15 +108,14 @@ export default function StoryCard({
 			<Briefcase
 				size={iconSize}
 				strokeWidth={iconStrokeWidth}
-				color={iconColor}
 				className={iconClass}
 			/>
 		)
 	}
 
 	return (
-		<div className="lg:[&>div>div.circle]:even:right-auto lg:[&>div>div.circle]:even:left-[-50px] mb-8 lg:mb-0 lg:odd:pr-8 lg:even:pl-8 lg:w-1/2 lg:even:self-end lg:[&>div]:after:content-[' '] lg:[&>div]:after:bg-zinc-100 lg:[&>div]:after:absolute lg:[&>div]:after:right-[-7.5px] lg:[&>div]:after:top-1 lg:[&>div]:after:rotate-45 lg:[&>div]:after:w-[15px] lg:[&>div]:after:h-[15px] lg:[&>div]:after:shadow-[2px_-2px_4px_rgba(0,0,0,0.2)] lg:[&>div]:even:after:right-auto lg:[&>div]:even:after:left-[-7.5px] lg:[&>div]:even:after:shadow-[-2px_2px_4px_rgba(0,0,0,0.2)]">
-			<div className="border rounded border-zinc-300 p-2 relative shadow-[0px_0px_5px_rgba(0,0,0,0.3)]">
+		<div className="lg:[&>div>div.circle]:even:right-auto lg:[&>div>div.circle]:even:left-[-50px] mb-8 lg:mb-0 lg:odd:pr-8 lg:even:pl-8 lg:w-1/2 lg:even:self-end lg:[&>div]:after:content-[' '] lg:[&>div]:after:bg-zinc-100 lg:[&>div]:after:absolute lg:[&>div]:after:right-[-7.5px] lg:[&>div]:after:top-1 lg:[&>div]:after:rotate-45 lg:[&>div]:after:w-[15px] lg:[&>div]:after:h-[15px] lg:[&>div]:after:shadow-[2px_-2px_4px_rgba(0,0,0,0.2)] lg:[&>div]:even:after:right-auto lg:[&>div]:even:after:left-[-7.5px] lg:[&>div]:even:after:shadow-[-2px_2px_4px_rgba(0,0,0,0.2)] dark:lg:[&>div]:after:bg-zinc-900 dark:lg:[&>div]:even:after:shadow-[-1px_1px_0px_rgb(63,63,70)] dark:lg:[&>div]:after:shadow-[1px_-1px_0px_rgb(63,63,70)]">
+			<div className="border rounded border-zinc-300 p-2 relative shadow-[0px_0px_5px_rgba(0,0,0,0.3)] dark:border-zinc-700">
 				{/* type */}
 				<div className="font-mono text-sm flex justify-between border-b-2 mb-2">
 					<span className="flex items-center">
@@ -157,7 +152,7 @@ export default function StoryCard({
 						<img
 							src={headerImage?.src}
 							alt={headerImage?.altText}
-							className="w-12 p-1 border border-zinc-300"
+							className="w-12 p-1 border border-zinc-300 dark:bg-zinc-50"
 						/>
 					)}
 					<div>
@@ -178,7 +173,7 @@ export default function StoryCard({
 				<div className="flex justify-center">{linkElements}</div>
 
 				{/* timeline node */}
-				<div className="circle hidden lg:inline bg-zinc-100 border-[3px] border-violet-900 rounded-full absolute top-0 right-[-50px] w-8 h-8 z-50">
+				<div className="circle hidden lg:inline bg-zinc-100 border-[3px] border-violet-900 rounded-full absolute top-0 right-[-50px] w-8 h-8 z-50 dark:bg-zinc-900 dark:border-violet-500">
 					{typeIcon}
 				</div>
 			</div>

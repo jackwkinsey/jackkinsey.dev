@@ -74,6 +74,9 @@ export default function Index() {
 	const radarChartOptions: ChartOptions<'radar'> = {
 		scales: {
 			r: {
+				angleLines: {
+					color: '#a1a1aa',
+				},
 				min: 0,
 				max: 100,
 				ticks: {
@@ -82,6 +85,7 @@ export default function Index() {
 				},
 				grid: {
 					circular: true,
+					color: '#a1a1aa',
 				},
 				pointLabels: {
 					font: {
@@ -94,25 +98,27 @@ export default function Index() {
 	return (
 		<>
 			<header></header>
-			<main className="p-4 md:mx-auto md:my-8 md:px-8 md:max-w-6xl text-zinc-500">
+			<main className="p-4 md:mx-auto md:my-8 md:px-8 md:max-w-6xl text-zinc-500 dark:text-zinc-400">
 				<section className="md:h-[500px]">
-					<p className="font-mono text-xs mb-8 text-violet-900">
+					<p className="font-mono text-xs mb-8 text-violet-900 dark:text-violet-500">
 						Hi, my name is
 					</p>
-					<h1 className="font-serif text-4xl text-zinc-900">Jack Kinsey.</h1>
-					<p className="font-serif text-2xl">I build web &amp; game apps.</p>
+					<h1 className="font-serif text-4xl text-zinc-900 dark:text-zinc-50">
+						Jack Kinsey.
+					</h1>
+					<p className="font-serif text-4xl">I build web &amp; game apps.</p>
 					<p className="mt-8 md:w-1/2 text-center md:text-left">
 						I'm a full stack web and game developer focused on building
 						exceptional, high-quality, and fun websites, games, and other
 						applications.
 					</p>
-					<div className="text-violet-900 border-4 border-violet-900 p-4 rounded-[5px] w-40 text-center mx-auto md:mx-0 mt-8 md:mt-36">
+					<div className="text-violet-900 border-4 border-violet-900 p-4 rounded-[5px] w-40 text-center mx-auto md:mx-0 mt-8 md:mt-36 dark:text-violet-500 dark:border-violet-500">
 						<a href="mailto:jack.w.kinsey@gmail.com">Get In Touch</a>
 					</div>
 				</section>
 
 				<section className="mt-20">
-					<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10">
+					<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10 dark:text-zinc-50 dark:border-violet-500">
 						About Me
 					</h2>
 					<div>
@@ -121,7 +127,7 @@ export default function Index() {
 							onMouseOut={() => setOver(false)}
 							src={over ? 'images/blue-steel.jpg' : 'images/jack.jpg'}
 							alt="Jack Kinsey"
-							className="rounded-full w-52 md:w-80 m-auto mb-4 shadow-[15px_8px_0px_rgba(76,29,149)]"
+							className="rounded-full w-52 md:w-80 m-auto mb-4 shadow-[10px_8px_0px_rgba(76,29,149)] dark:shadow-[10px_8px_0px_rgba(139,92,246)]"
 						/>
 						<p
 							className={over ? 'text-center visible' : 'text-center invisible'}
@@ -164,7 +170,7 @@ export default function Index() {
 				</section>
 
 				<section className="mt-20">
-					<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10">
+					<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10 dark:text-zinc-50 dark:border-violet-500">
 						Skills
 					</h2>
 					<article className="md:max-w-2xl md:m-auto">
@@ -217,10 +223,10 @@ export default function Index() {
 				</section>
 
 				<section className="mt-20">
-					<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10">
+					<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10 dark:text-zinc-50 dark:border-violet-500">
 						Dev Story
 					</h2>
-					<div className="flex flex-col relative my-[40px] lg:after:bg-zinc-200 lg:after:content-[''] lg:after:absolute lg:after:left-[calc(50%-2px)] lg:after:w-1 lg:after:h-full">
+					<div className="flex flex-col relative my-[40px] lg:after:bg-zinc-200 lg:after:content-[''] lg:after:absolute lg:after:left-[calc(50%-2px)] lg:after:w-1 lg:after:h-full dark:lg:after:bg-zinc-800">
 						{storyData.map(data => {
 							const {
 								type,
@@ -252,7 +258,7 @@ export default function Index() {
 				</section>
 
 				<section className="mt-20 hidden">
-					<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10">
+					<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10 dark:text-zinc-50 dark:border-violet-500">
 						Featured Projects
 					</h2>
 					<div>TODO: add 3 featured projects</div>
