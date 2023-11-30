@@ -66,7 +66,7 @@ Feel free to create a user to give it a whirl, or you can login as a test user.
 Credentials for test user:
 \n  
     test@example.com
-    Hail5atan!
+    Test1234!
     `,
 		links: [
 			{ url: 'https://remix-expenses-tawny.vercel.app', text: 'try it out' },

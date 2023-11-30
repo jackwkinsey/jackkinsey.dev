@@ -14,7 +14,9 @@ export default function RadarChart({
 }: RadarChartProps) {
 	return (
 		<div>
-			<h3 className="font-serif text-xl text-center text-zinc-900">{title}</h3>
+			<h3 className="font-serif text-xl text-center text-zinc-900 dark:text-zinc-100">
+				{title}
+			</h3>
 			<Radar data={chartData} options={options} />
 		</div>
 	)

@@ -103,7 +103,7 @@ export default function Index() {
 					<p className="font-mono text-xs mb-8 text-violet-900 dark:text-violet-500">
 						Hi, my name is
 					</p>
-					<h1 className="font-serif text-4xl text-zinc-900 dark:text-zinc-50">
+					<h1 className="font-serif text-4xl text-zinc-900 dark:text-zinc-100">
 						Jack Kinsey.
 					</h1>
 					<p className="font-serif text-4xl">I build web &amp; game apps.</p>
@@ -118,7 +118,7 @@ export default function Index() {
 				</section>
 
 				<section className="mt-20">
-					<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10 dark:text-zinc-50 dark:border-violet-500">
+					<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10 dark:text-zinc-100 dark:border-violet-500">
 						About Me
 					</h2>
 					<div>
@@ -138,31 +138,33 @@ export default function Index() {
 					</div>
 					<article className="mt-8 md:max-w-2xl md:m-auto">
 						<p className="mb-4">
-							Greetings! I'm Jack, a seasoned full-stack web developer with a
-							rich history spanning over 9 years in the industry. As the proud
-							founder of Hexbit Studios, a small independent game studio, I
-							bring a unique blend of technical expertise and creative flair to
-							my work.
+							Greetings! I'm Jack, a seasoned full stack web developer with over
+							9 years of industry experience. I am also the founder of Hexbit
+							Studios, a small independent game studio. I aim to bring a unique
+							blend of technical expertise, creative flair, and empathy to my
+							work.
 						</p>
 						<p className="mb-4">
 							My journey in the realm of software development has been diverse,
-							with a primary focus on web app projects. I've had the privilege
-							of contributing to various teams and assuming different roles,
-							allowing me to cultivate a holistic understanding of the
+							primarily focusing on web application projects. I've had the
+							privilege of contributing to various teams and assuming different
+							roles, allowing me to cultivate a holistic understanding of the
 							development process. I'm not just passionate about crafting
-							seamless user experiences and robust app backends; I thrive on
-							sharing my knowledge and mentoring fellow teammates.
+							seamless user experiences and robust backends; I thrive on sharing
+							my knowledge and mentoring fellow teammates.
 						</p>
 						<p className="mb-4">
-							In addition to my web development pursuits, I channel my
-							creativity into the realm of game design. Whether it's devising
-							captivating game worlds or implementing innovative mechanics, I
-							find immense joy in the process. When I'm not immersed in the
-							world of web development, you'll likely catch me engrossed in the
-							creation of pixel art for exciting game projects or composing
-							music with my trusty guitar and synthesizers.
+							In addition to web development, I also have a passion for game
+							development. I find great joy in building game worlds with
+							interesting mechanics and systems.
 						</p>
-						<p>
+						<p className="mb-8">
+							When I'm not immersed in the world of web and game development,
+							you'll likely catch me engrossed in the creation of pixel art for
+							game projects or composing music with my guitar and synthesizers.
+						</p>
+						<hr className="border-zinc-800 mb-8" />
+						<p className="text-center mb-4">
 							Join me on this journey of blending technology and creativity,
 							where every line of code and pixel contributes to a bigger story.
 						</p>
@@ -170,7 +172,7 @@ export default function Index() {
 				</section>
 
 				<section className="mt-20">
-					<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10 dark:text-zinc-50 dark:border-violet-500">
+					<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10 dark:text-zinc-100 dark:border-violet-500">
 						Skills
 					</h2>
 					<article className="md:max-w-2xl md:m-auto">
@@ -179,7 +181,7 @@ export default function Index() {
 								I have had the privilege of working with a wide array of
 								technologies over the course of my career.
 							</p>
-							<p className="mb-4">Some of my favorites are:</p>
+							<p className="mb-4 text-center">Some of my favorites are:</p>
 							<div className="grid grid-cols-4 mb-8">
 								<ul className="list-none">
 									<li>React</li>
@@ -187,19 +189,19 @@ export default function Index() {
 									<li>TypeScript</li>
 									<li>Vue</li>
 								</ul>
-								<ul className="list-none">
+								<ul className="list-none text-center">
 									<li>React Native</li>
 									<li>Node</li>
 									<li>Postgres</li>
 									<li>MongoDB</li>
 								</ul>
-								<ul className="list-none">
+								<ul className="list-none text-center">
 									<li>Tailwind CSS</li>
 									<li>Prisma</li>
 									<li>Next</li>
 									<li>Remix</li>
 								</ul>
-								<ul className="list-none">
+								<ul className="list-none text-right">
 									<li>GraphQL</li>
 									<li>Apollo</li>
 									<li>Vercel</li>
@@ -223,7 +225,7 @@ export default function Index() {
 				</section>
 
 				<section className="mt-20">
-					<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10 dark:text-zinc-50 dark:border-violet-500">
+					<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10 dark:text-zinc-100 dark:border-violet-500">
 						Dev Story
 					</h2>
 					<div className="flex flex-col relative my-[40px] lg:after:bg-zinc-200 lg:after:content-[''] lg:after:absolute lg:after:left-[calc(50%-2px)] lg:after:w-1 lg:after:h-full dark:lg:after:bg-zinc-800">
@@ -258,7 +260,7 @@ export default function Index() {
 				</section>
 
 				<section className="mt-20 hidden">
-					<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10 dark:text-zinc-50 dark:border-violet-500">
+					<h2 className="font-serif border-l-[5px] border-b-[5px] border-violet-900 p-2 rounded-bl-lg text-2xl text-zinc-900 mb-10 dark:text-zinc-100 dark:border-violet-500">
 						Featured Projects
 					</h2>
 					<div>TODO: add 3 featured projects</div>

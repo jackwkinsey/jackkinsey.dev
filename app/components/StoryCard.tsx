@@ -56,7 +56,7 @@ export default function StoryCard({
 			<a
 				key={link.url}
 				href={link.url}
-				className={`underline underline-offset-2 text-violet-900 ${
+				className={`underline underline-offset-2 text-violet-900 dark:text-violet-500 ${
 					index > 0 ? 'ml-4' : ''
 				}`}
 				target="blank"
