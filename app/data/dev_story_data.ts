@@ -192,6 +192,8 @@ Credentials for test user:
 		headerSubtitle: 'A game made in 48 hours for Ludum Dare #43',
 		headerTags: ['Unity', 'Game Jam'],
 		bodyMarkdown: `
+![diminution screenshot](/images/diminution-screenshot.png)
+\n
 This is a small prototype done over Ludum Dare 43 weekend.
 \n
 You are trying to get data through a computer. You must conserve your resources while you try to get to the portal on each level. Try to get as much data through as possible.
