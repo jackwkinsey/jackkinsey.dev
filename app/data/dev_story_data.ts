@@ -185,6 +185,27 @@ Credentials for test user:
 - Created frontend using custom React components.
     `,
 	},
+		{
+		type: 'game',
+		start: new Date('December, 3, 2018'),
+		headerTitle: 'Diminution',
+		headerSubtitle: 'A game made in 48 hours for Ludum Dare #43',
+		headerTags: ['Unity', 'Game Jam'],
+		bodyMarkdown: `
+This is a small prototype done over Ludum Dare 43 weekend.
+\n
+You are trying to get data through a computer. You must conserve your resources while you try to get to the portal on each level. Try to get as much data through as possible.
+\n
+Passing over a colored tile will deplete that corresponding resource. If you pass over a purple tile, both resources will be depleted. Data is consumed with each movement as well.
+\n
+The game ends when you lose all of one resource (blue and red bars), or all of your data (green bar), or reach the final data portal.
+\n
+Careful though, the board updates with each move! The logic for the board updates follows Conway’s Game of Life. You can interact with the Game of Life simulation by either left or right clicking to place a blue or red tile on the board respectively. One tile placement can have a huge impact on the board.
+    `,
+		links: [
+			{ url: 'https://ldjam.com/events/ludum-dare/43/diminution', text: 'game jam site' },
+		],
+	},
 	{
 		type: 'position',
 		start: new Date('November 1, 2018'),
