@@ -172,7 +172,7 @@ export default function StoryCard({
 				<div className="flex justify-center">{linkElements}</div>
 
 				{/* timeline node */}
-				<div className="circle hidden lg:inline bg-zinc-100 border-[3px] border-violet-900 rounded-full absolute top-0 right-[-50px] w-8 h-8 z-50 dark:bg-zinc-900 dark:border-violet-500">
+				<div className="circle hidden lg:flex lg:items-center bg-zinc-100 border-[3px] border-violet-900 rounded-full absolute top-0 right-[-50px] w-8 h-8 z-50 dark:bg-zinc-900 dark:border-violet-500">
 					{typeIcon}
 				</div>
 			</div>
