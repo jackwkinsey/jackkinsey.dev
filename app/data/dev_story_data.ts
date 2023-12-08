@@ -21,6 +21,31 @@ type StoryCardData = {
 
 const data: Array<StoryCardData> = [
 	{
+		type: 'game',
+		start: new Date('December 1, 2023'),
+		headerTitle: 'Component-based Space Shooter',
+		headerSubtitle: 'A small prototype for working with components in Godot',
+		headerTags: ['Godot', 'GDScript'],
+		bodyMarkdown: `
+![space shooter screenshot](images/component-space-shooter.png)
+This is a small game prototype I'm working on as a case study of designing and implementing games in the Godot engine using a component-based approach.
+\n
+Essentially, I can compose various components together which contain behavioral logic or modify data to create various games and interactive experiences.
+\n
+This prototype is a proof of concept to help inform my future projects. Check back regularly to see it progress.
+`,
+		links: [
+			{
+				url: 'https://jackkinsey.itch.io/component-based-space-shooter',
+				text: 'try it out',
+			},
+			{
+				url: 'https://github.com/jackwkinsey/component-based-space-shooter',
+				text: 'view the code',
+			},
+		],
+	},
+	{
 		type: 'position',
 		start: new Date('September 1, 2022'),
 		end: 'current',
@@ -185,7 +210,7 @@ Credentials for test user:
 - Created frontend using custom React components.
     `,
 	},
-		{
+	{
 		type: 'game',
 		start: new Date('December, 3, 2018'),
 		headerTitle: 'Diminution',
@@ -205,7 +230,10 @@ The game ends when you lose all of one resource (blue and red bars), or all of y
 Careful though, the board updates with each move! The logic for the board updates follows Conway’s Game of Life. You can interact with the Game of Life simulation by either left or right clicking to place a blue or red tile on the board respectively. One tile placement can have a huge impact on the board.
     `,
 		links: [
-			{ url: 'https://ldjam.com/events/ludum-dare/43/diminution', text: 'game jam site' },
+			{
+				url: 'https://ldjam.com/events/ludum-dare/43/diminution',
+				text: 'game jam site',
+			},
 		],
 	},
 	{
