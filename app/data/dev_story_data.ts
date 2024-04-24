@@ -21,6 +21,31 @@ type StoryCardData = {
 
 const data: Array<StoryCardData> = [
 	{
+		type: 'position',
+		start: new Date('January 21, 2024'),
+		end: 'current',
+		headerImage: {
+			src: '/images/plantbid-logo.png',
+			altText: 'Plantbid logo',
+		},
+		headerTitle: 'Senior Frontend Engineer',
+		headerSubtitle: 'Plantbid',
+		headerTags: [
+			'React',
+			'TypeScript',
+			'JavaScript',
+			'Node',
+			'Vite',
+			'MongoDB',
+		],
+		bodyMarkdown: `
+- Oversee the frontend architecture and development of the Plantbid SaaS platform.
+- Work with the product team to implement new features and improve existing ones.
+- Create and maintain a component library to be used across the platform.
+- Create internal tool to manage and track plant lists for the sales team.
+  `,
+	},
+	{
 		type: 'game',
 		start: new Date('December 1, 2023'),
 		headerTitle: 'Component-based Space Shooter',
@@ -48,7 +73,7 @@ This prototype is a proof of concept to help inform my future projects. Check ba
 	{
 		type: 'position',
 		start: new Date('September 1, 2022'),
-		end: 'current',
+		end: new Date('November 1, 2023'),
 		headerImage: {
 			src: '/images/oaaf-logo.png',
 			altText: 'Of Ash and Fire logo',
