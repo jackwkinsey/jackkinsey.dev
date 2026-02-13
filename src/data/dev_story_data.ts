@@ -114,7 +114,7 @@ Users can then view their expenses in a list or view some simple analytics about
 Feel free to create a user to give it a whirl, or you can login as a test user.
 \n
 Credentials for test user:
-\n  
+\n
     test@example.com
     Test1234!
     `,
@@ -169,19 +169,6 @@ Credentials for test user:
 - Created microsites using React that consumed Node and .NET microservices.
     `,
 	},
-	// 	{
-	// 		type: 'app',
-	// 		start: new Date('August 1, 2020'),
-	// 		headerTitle: 'Roll Init',
-	// 		headerSubtitle: 'Track your D&D encounters',
-	// 		headerTags: ['React', 'Next.js', 'TypeScript', 'Prisma', 'MongoDB'],
-	// 		bodyMarkdown: `
-	// This web app allows users to sign in and manage encounters for the popular table top role playing game, Dungeons & Dragons, specifically for the 5th edition of this game.
-	// \n
-	// Game Managers can create and save their players' characters to use in encounters. By adding their chosen players and any monster that is found in the free and open D&D 5th edition SRD API to an encounter, Game Managers can track and run their encounters easily.
-	//     `,
-	// 		links: [{ url: 'https://www.rollinit.xyz', text: 'try it out' }],
-	// 	},
 	{
 		type: 'position',
 		start: new Date('August 1, 2019'),
@@ -252,7 +239,7 @@ Passing over a colored tile will deplete that corresponding resource. If you pas
 \n
 The game ends when you lose all of one resource (blue and red bars), or all of your data (green bar), or reach the final data portal.
 \n
-Careful though, the board updates with each move! The logic for the board updates follows Conway’s Game of Life. You can interact with the Game of Life simulation by either left or right clicking to place a blue or red tile on the board respectively. One tile placement can have a huge impact on the board.
+Careful though, the board updates with each move! The logic for the board updates follows Conway's Game of Life. You can interact with the Game of Life simulation by either left or right clicking to place a blue or red tile on the board respectively. One tile placement can have a huge impact on the board.
     `,
 		links: [
 			{
