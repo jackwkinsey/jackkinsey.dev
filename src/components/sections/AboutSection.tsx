@@ -65,10 +65,10 @@ function ValuesList({
         >
           <button
             onClick={() => onSelect(index)}
-            className={`text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight transition-colors duration-500 cursor-pointer ${
+            className={`text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight transition-all duration-500 cursor-pointer ${
               activeIndex === index
-                ? "text-zinc-900 dark:text-white"
-                : "text-zinc-300 dark:text-zinc-700 hover:text-zinc-500 dark:hover:text-zinc-500"
+                ? "text-[#00f0ff] neon-cyan"
+                : "text-[#6b7280] hover:text-[#9ca3af]"
             }`}
           >
             {item.title}
@@ -91,7 +91,7 @@ function ImageSection({ activeValue }: { activeValue: AboutItem }) {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="relative w-full lg:max-w-sm mx-auto aspect-3/2 lg:aspect-3/4 lg:rounded-none overflow-hidden shadow-2xl"
+        className="relative w-full lg:max-w-sm mx-auto aspect-3/2 lg:aspect-3/4 lg:rounded-none overflow-hidden shadow-2xl border border-[rgba(0,240,255,0.3)] neon-border"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
@@ -110,7 +110,7 @@ function ImageSection({ activeValue }: { activeValue: AboutItem }) {
 
         {isJackPhoto && hovered && (
           <div className="absolute bottom-4 left-0 right-0 text-center">
-            <span className="bg-black/60 text-white text-xs font-mono px-3 py-1 rounded-full">
+            <span className="bg-black/60 text-[#ff00aa] neon-magenta text-xs font-mono px-3 py-1 rounded-full">
               BLUE STEEL
             </span>
           </div>
@@ -131,10 +131,10 @@ function ContentSection({ activeValue }: { activeValue: AboutItem }) {
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-lg sm:text-xl lg:text-2xl font-light tracking-tight text-zinc-900 dark:text-white mb-4 sm:mb-6">
+          <h2 className="text-lg sm:text-xl lg:text-2xl font-light tracking-tight text-[#e0f0ff] mb-4 sm:mb-6">
             {activeValue.heading}
           </h2>
-          <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          <p className="text-base sm:text-lg text-[#6b7280] leading-relaxed">
             {activeValue.description}
           </p>
         </motion.div>

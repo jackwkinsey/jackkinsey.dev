@@ -133,7 +133,7 @@ function ShowcaseCarousel({
         {items.map((entry, index) => (
           <motion.div
             key={`${entry.headerTitle}-${index}`}
-            className="shrink-0 w-[280px] sm:w-[320px] h-[320px] rounded-2xl overflow-hidden select-none relative pointer-events-auto bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex flex-col"
+            className="shrink-0 w-[280px] sm:w-[320px] h-[320px] rounded-2xl overflow-hidden select-none relative pointer-events-auto bg-[#0d0d1a] border border-[rgba(0,240,255,0.15)] flex flex-col transition-shadow duration-300"
             initial={{ rotateX: 0, opacity: 1 }}
             animate={
               hoveredId === index
@@ -157,11 +157,21 @@ function ShowcaseCarousel({
             }}
             onMouseEnter={() => setHoveredId(index)}
             onMouseLeave={() => setHoveredId(null)}
-            style={{ transformPerspective: 1000 }}
+            style={{
+              transformPerspective: 1000,
+              boxShadow:
+                hoveredId === index
+                  ? "0 0 15px rgba(255, 0, 170, 0.4), 0 0 30px rgba(255, 0, 170, 0.2), inset 0 0 10px rgba(255, 0, 170, 0.1)"
+                  : "0 0 5px rgba(0, 240, 255, 0.1)",
+              borderColor:
+                hoveredId === index
+                  ? "rgba(255, 0, 170, 0.5)"
+                  : "rgba(0, 240, 255, 0.15)",
+            }}
           >
             {/* Header Image */}
             {entry.headerImage && (
-              <div className="shrink-0 h-20 w-full flex items-center justify-center bg-white dark:bg-zinc-800 p-3">
+              <div className="shrink-0 h-20 w-full flex items-center justify-center bg-[#0a0a14] p-3">
                 <img
                   src={entry.headerImage.src}
                   alt={entry.headerImage.altText}
@@ -175,23 +185,23 @@ function ShowcaseCarousel({
             <div className="p-4 flex flex-col flex-1 overflow-hidden relative">
               {/* Type & Date */}
               <div className="flex items-center justify-between mb-2 shrink-0">
-                <span className="flex items-center text-[11px] font-mono text-violet-600 dark:text-violet-400 uppercase tracking-wide">
+                <span className="flex items-center text-[11px] font-mono text-[#00f0ff] uppercase tracking-wide">
                   {getTypeIcon(entry.type)}
                   {entry.type}
                 </span>
-                <span className="text-[10px] text-zinc-500 dark:text-zinc-400 font-mono">
+                <span className="text-[10px] text-[#6b7280] font-mono">
                   {formatDateRange(entry.start, entry.end)}
                 </span>
               </div>
 
               {/* Title */}
-              <h3 className="text-base font-semibold text-zinc-900 dark:text-zinc-100 leading-tight mb-1 shrink-0">
+              <h3 className="text-base font-semibold text-[#e0f0ff] leading-tight mb-1 shrink-0">
                 {entry.headerTitle}
               </h3>
 
               {/* Subtitle */}
               {entry.headerSubtitle && (
-                <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-2 shrink-0">
+                <p className="text-sm text-[#6b7280] mb-2 shrink-0">
                   {entry.headerSubtitle}
                 </p>
               )}
@@ -202,7 +212,7 @@ function ShowcaseCarousel({
                   {entry.headerTags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-violet-100 text-violet-700 dark:bg-violet-900/50 dark:text-violet-300"
+                      className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-[rgba(0,240,255,0.1)] text-[#00f0ff] border border-[rgba(0,240,255,0.2)]"
                     >
                       {tag}
                     </span>
@@ -212,14 +222,14 @@ function ShowcaseCarousel({
 
               {/* Links */}
               {entry.links && entry.links.length > 0 && (
-                <div className="pt-2 shrink-0 flex gap-3 border-t border-zinc-200 dark:border-zinc-800 mt-2">
+                <div className="pt-2 shrink-0 flex gap-3 border-t border-[rgba(0,240,255,0.1)] mt-2">
                   {entry.links.map((link) => (
                     <a
                       key={link.url}
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs underline underline-offset-2 text-violet-600 dark:text-violet-400 hover:text-violet-800 dark:hover:text-violet-300"
+                      className="text-xs underline underline-offset-2 text-[#ff00aa] hover:neon-magenta transition-all duration-300"
                       onClick={(e) => e.stopPropagation()}
                     >
                       {link.text || "link"}
