@@ -12,36 +12,36 @@ interface AboutItem {
 const ABOUT_ITEMS: AboutItem[] = [
   {
     id: 1,
-    title: "Career",
-    heading: "A decade of building for the web",
+    title: "Dossier",
+    heading: "10+ years jacked into the NET",
     description:
-      "I'm Jack, a Senior Frontend Engineer based in Fort Wayne, Indiana, with over a decade of experience building for the web. I've shipped production code at Apple, worked on data visualization platforms at Exaptive, and currently lead frontend efforts at Plantbid, where I build cross-framework component libraries and bridge the gap between backend and frontend teams.",
+      "Name's Jack. Senior Frontend Engineer operating out of Fort Wayne, Indiana. Over a decade running code through the web. Shipped production chrome at Apple, built data viz rigs at Exaptive, and currently lead frontend ops at Plantbid \u2014 wiring up cross-framework component libraries and bridging the gap between backend and frontend crews.",
     image: "images/jack.jpg",
   },
   {
     id: 2,
-    title: "Toolkit",
-    heading: "React, TypeScript & beyond",
+    title: "Chrome",
+    heading: "React, TypeScript & bleeding edge tech",
     description:
-      "My core toolkit is React and TypeScript, but I'm most at home wherever the problem is interesting. I've built rich data visualizations with D3, developed cross-platform mobile apps with Expo, and I'm always looking for ways to push what's possible in the browser. Lately I've been deep into AI-assisted development workflows, using tools like Claude Code to dramatically scale my output as a solo developer on side projects.",
+      "My go-to cyberware is React and TypeScript, but I flatline boredom \u2014 I go wherever the problem's interesting. Built rich data viz with D3, shipped cross-platform mobile apps with Expo, and I'm always pushing what the browser can handle. Lately I've been deep into AI-augmented dev workflows, running Claude Code as a co-pilot to delta my output on solo gigs.",
     image:
       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
   },
   {
     id: 3,
-    title: "Projects",
-    heading: "Always building something",
+    title: "Gigs",
+    heading: "Always shipping something",
     description:
-      "I'm usually building something outside of work, too. RowLog is my rowing workout tracker with detailed data visualization. HavenPlate is a mobile app helping families navigate dietary restrictions. And Subsisters is an indie game I'm developing with Phaser. I gravitate toward projects that sit at the intersection of thoughtful UI, real utility, and a little creative ambition.",
+      "Off the clock, I'm still in the NET. RowLog is my rowing data tracker with detailed viz output. HavenPlate is a mobile app helping chooms navigate dietary restrictions. And Subsisters is an indie game I'm building in Phaser. I gravitate toward gigs at the intersection of tight UI, real utility, and a little gonk creative ambition.",
     image:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
   },
   {
     id: 4,
-    title: "Interests",
-    heading: "More than code",
+    title: "Offgrid",
+    heading: "More than code, choom",
     description:
-      "Beyond code, I produce industrial and electronic music under the name Twelve Dead Prophets, row on a Concept2 RowERG, and play way too much Magic: The Gathering. I've given talks on React, C#, and Unity game development, and I genuinely enjoy the craft of explaining technical ideas clearly, whether that's in a conference talk, a PR description, or a Discord thread with my team.",
+      "When I unplug, I produce industrial and electronic music under the alias Twelve Dead Prophets, grind reps on a Concept2 RowERG, and play way too much Magic: The Gathering. I've given talks on React, C#, and Unity game dev, and I genuinely enjoy the craft of breaking down technical ideas \u2014 whether that's on stage, in a PR, or in a Discord thread with the crew.",
     image:
       "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&q=80",
   },

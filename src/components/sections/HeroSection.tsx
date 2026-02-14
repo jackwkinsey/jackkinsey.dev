@@ -14,23 +14,23 @@ export default function HeroSection() {
       />
       <div className="absolute inset-0 z-10 flex flex-col justify-center">
         <p className="font-mono text-xs mb-8 text-[#00f0ff]">
-          Hi, my name is
+          // initiating_handshake ...
         </p>
         <GlitchText
           text="Jack Kinsey."
           className="font-serif text-4xl md:text-6xl text-[#e0f0ff] neon-cyan"
         />
         <ShinyText
-          text="I build web & game apps."
+          text="I build things for the NET."
           className="font-serif text-2xl md:text-4xl"
           speed={3}
           shineColor="#00f0ff"
           color="#ff00aa"
         />
         <p className="mt-8 md:w-1/2 text-center md:text-left text-[#6b7280]">
-          I'm a full stack web and game developer focused on building
-          exceptional, high-quality, and fun websites, games, and other
-          applications.
+          Full stack netrunner. I jack into the web and game dev space to
+          craft preem digital experiences &mdash; the kind of chrome that
+          actually works.
         </p>
         <Button
           variant="outline"
@@ -38,7 +38,7 @@ export default function HeroSection() {
           asChild
           className="border-[#00f0ff] text-[#00f0ff] hover:bg-[#ff00aa] hover:text-white hover:border-[#ff00aa] neon-border mt-8 md:mt-20 max-w-xs transition-all duration-300"
         >
-          <a href="mailto:jack.w.kinsey@gmail.com">Get In Touch</a>
+          <a href="mailto:jack.w.kinsey@gmail.com">Jack In</a>
         </Button>
       </div>
     </section>
