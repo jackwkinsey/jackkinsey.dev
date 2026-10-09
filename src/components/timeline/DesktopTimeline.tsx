@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { EntryBody, EntryLinks, EntryTags, FilterChips } from "./shared";
 import {
@@ -62,12 +62,72 @@ const sideRows = placeInRows(chronological.filter((e) => e.type !== "position"),
 const ticks = [firstYear];
 for (let year = careerStartYear; year < lastYear; year++) ticks.push(year);
 
+const TOOLTIP_MARGIN = 8;
+
+/**
+ * Hover card beside a dot. Centered on the dot by default, then nudged
+ * vertically so it never spills out of (and scrolls) the timeline box.
+ */
+function DotTooltip({
+  entry,
+  flip,
+  boundsRef,
+}: {
+  entry: TimelineEntry;
+  flip: boolean;
+  boundsRef: React.RefObject<HTMLDivElement | null>;
+}) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const [shift, setShift] = useState(0);
+  const { color, rgb, label } = TYPE_STYLES[entry.type];
+
+  useLayoutEffect(() => {
+    const tip = ref.current?.getBoundingClientRect();
+    const bounds = boundsRef.current?.getBoundingClientRect();
+    if (!tip || !bounds) return;
+    if (tip.bottom > bounds.bottom - TOOLTIP_MARGIN) {
+      setShift(bounds.bottom - TOOLTIP_MARGIN - tip.bottom);
+    } else if (tip.top < bounds.top + TOOLTIP_MARGIN) {
+      setShift(bounds.top + TOOLTIP_MARGIN - tip.top);
+    }
+  }, [boundsRef]);
+
+  return (
+    <span
+      ref={ref}
+      role="tooltip"
+      className={cn(
+        "pointer-events-none absolute top-1/2 flex w-[230px] flex-col gap-0.5 rounded-[10px] bg-[#0d0d1a] px-3 py-2.5 text-left",
+        flip ? "right-[calc(100%+4px)]" : "left-[calc(100%+4px)]",
+      )}
+      style={{
+        transform: `translateY(calc(-50% + ${shift}px))`,
+        border: `1px solid rgba(${rgb},0.6)`,
+        boxShadow: `0 0 16px rgba(${rgb},0.25), 0 8px 24px rgba(0,0,0,0.6)`,
+      }}
+    >
+      <span className="font-mono text-[10px] tracking-widest" style={{ color }}>
+        {label.toUpperCase()}
+      </span>
+      <span className="text-[17px] leading-tight font-bold text-[#e0f0ff]">{entry.headerTitle}</span>
+      {entry.headerSubtitle && (
+        <span className="text-[15px] font-semibold text-[#c9d4e3]">{entry.headerSubtitle}</span>
+      )}
+      <span className="font-mono text-[11px] text-[#8b93a3]">
+        {formatDateRange(entry)}
+        {entry.end && ` · ${formatDuration(entry)}`}
+      </span>
+    </span>
+  );
+}
+
 export default function DesktopTimeline() {
   const [filter, setFilter] = useState<Filter>("all");
   const [selectedId, setSelectedId] = useState(
     () => [...entries].sort(byStartAsc).at(-1)!.id,
   );
   const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const scrollBoxRef = useRef<HTMLDivElement>(null);
 
   const visible = useMemo(
     () => chronological.filter((e) => matchesFilter(e, filter)),
@@ -105,7 +165,7 @@ export default function DesktopTimeline() {
             );
           })}
         {placed.map(({ entry, mid, row }) => {
-          const { color, rgb, label } = TYPE_STYLES[entry.type];
+          const { color, rgb } = TYPE_STYLES[entry.type];
           const on = entry.id === selected.id;
           const hovered = entry.id === hoveredId;
           return (
@@ -138,35 +198,7 @@ export default function DesktopTimeline() {
                   boxShadow: on || hovered ? `0 0 12px ${color}` : "none",
                 }}
               />
-              {hovered && (
-                <span
-                  role="tooltip"
-                  className={cn(
-                    "pointer-events-none absolute top-1/2 flex w-[230px] -translate-y-1/2 flex-col gap-0.5 rounded-[10px] bg-[#0d0d1a] px-3 py-2.5 text-left",
-                    mid > 65 ? "right-[calc(100%+4px)]" : "left-[calc(100%+4px)]",
-                  )}
-                  style={{
-                    border: `1px solid rgba(${rgb},0.6)`,
-                    boxShadow: `0 0 16px rgba(${rgb},0.25), 0 8px 24px rgba(0,0,0,0.6)`,
-                  }}
-                >
-                  <span className="font-mono text-[10px] tracking-widest" style={{ color }}>
-                    {label.toUpperCase()}
-                  </span>
-                  <span className="text-[17px] leading-tight font-bold text-[#e0f0ff]">
-                    {entry.headerTitle}
-                  </span>
-                  {entry.headerSubtitle && (
-                    <span className="text-[15px] font-semibold text-[#c9d4e3]">
-                      {entry.headerSubtitle}
-                    </span>
-                  )}
-                  <span className="font-mono text-[11px] text-[#8b93a3]">
-                    {formatDateRange(entry)}
-                    {entry.end && ` · ${formatDuration(entry)}`}
-                  </span>
-                </span>
-              )}
+              {hovered && <DotTooltip entry={entry} flip={mid > 65} boundsRef={scrollBoxRef} />}
             </button>
           );
         })}
@@ -178,7 +210,7 @@ export default function DesktopTimeline() {
     <div className="flex flex-col gap-8">
       <FilterChips value={filter} onChange={setFilter} showCounts className="flex-wrap" />
 
-      <div className="overflow-x-auto rounded-2xl border border-[rgba(0,240,255,0.18)] bg-[rgba(13,13,26,0.85)] shadow-[0_0_24px_rgba(0,240,255,0.06)]">
+      <div ref={scrollBoxRef} className="overflow-x-auto rounded-2xl border border-[rgba(0,240,255,0.18)] bg-[rgba(13,13,26,0.85)] shadow-[0_0_24px_rgba(0,240,255,0.06)]">
         <div className="relative min-w-[960px] px-7 pt-6 pb-12">
           <div className="relative">
             {/* Year ruler */}
