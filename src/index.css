@@ -183,6 +183,70 @@
   background-size: 50px 50px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero grid floor */
+.grid-floor-plane {
+  --cell: 40px;
+  background-image:
+    linear-gradient(rgba(0, 240, 255, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.35) 1px, transparent 1px);
+  background-size: var(--cell) var(--cell);
+  mask-image: linear-gradient(to bottom, transparent, #000 40%);
+  animation: grid-floor 4s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .grid-floor-plane {
+    --cell: 60px;
+  }
+}
+
+@keyframes grid-floor {
+  to {
+    background-position: 0 var(--cell);
+  }
+}
+
+.light-streak {
+  position: absolute;
+  left: -25%;
+  height: 2px;
+  animation: light-streak 9s linear infinite;
+}
+
+@keyframes light-streak {
+  from {
+    left: -25%;
+  }
+  to {
+    left: 125%;
+  }
+}
+
+.terminal-cursor {
+  animation: terminal-blink 1s steps(1) infinite;
+}
+
+@keyframes terminal-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .grid-floor-plane,
+  .light-streak,
+  .terminal-cursor {
+    animation: none;
+  }
+}
+
 /* Glitch text effect */
 .glitch-wrapper {
   position: relative;
