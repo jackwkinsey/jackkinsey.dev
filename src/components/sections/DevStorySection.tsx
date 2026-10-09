@@ -155,8 +155,9 @@ function ShowcaseCarousel({
               ease: "backOut",
               zIndex: { delay: hoveredId === index ? 0 : 0.4 },
             }}
-            onMouseEnter={() => setHoveredId(index)}
-            onMouseLeave={() => setHoveredId(null)}
+            // Hover events from motion ignore touch, so cards don't stick "lifted" after a tap
+            onHoverStart={() => setHoveredId(index)}
+            onHoverEnd={() => setHoveredId(null)}
             style={{
               transformPerspective: 1000,
               boxShadow:

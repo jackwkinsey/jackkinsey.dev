@@ -72,8 +72,10 @@ export default function LightCycles() {
     if (!ctx) return;
 
     function resize() {
+      // Canvas is fixed to the viewport, so match its size (not the page's
+      // scroll height) to avoid the drawing being stretched
       canvas!.width = window.innerWidth;
-      canvas!.height = document.documentElement.scrollHeight;
+      canvas!.height = window.innerHeight;
 
       // Re-init cycles if none exist or canvas resized significantly
       if (cyclesRef.current.length === 0) {

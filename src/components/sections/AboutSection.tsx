@@ -92,8 +92,12 @@ function ImageSection({ activeValue }: { activeValue: AboutItem }) {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
         className="relative w-full lg:max-w-sm mx-auto aspect-3/2 lg:aspect-3/4 lg:rounded-none overflow-hidden shadow-2xl border border-[rgba(0,240,255,0.3)] neon-border"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
+        onHoverStart={() => setHovered(true)}
+        onHoverEnd={() => setHovered(false)}
+        // Touch devices can't hover, so let a tap toggle the easter egg
+        onTap={(e) => {
+          if ((e as PointerEvent).pointerType === "touch") setHovered((h) => !h);
+        }}
       >
         <AnimatePresence mode="wait">
           <motion.img
