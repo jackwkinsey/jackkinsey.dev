@@ -1,4 +1,4 @@
-import Particles from "@/components/Particles";
+// import Particles from "@/components/Particles";
 import GlitchText from "@/components/GlitchText";
 import ShinyText from "@/components/ShinyText";
 import { Button } from "@/components/ui/button";
@@ -6,12 +6,12 @@ import { Button } from "@/components/ui/button";
 export default function HeroSection() {
   return (
     <section className="relative h-[500px]">
-      <Particles
+      {/* <Particles
         particleCount={200}
         particleColors={["#00f0ff", "#ff00aa", "#7b2dff"]}
         speed={0.3}
         className="absolute inset-0 z-0"
-      />
+      /> */}
       <div className="absolute inset-0 z-10 flex flex-col justify-center">
         <p className="font-mono text-xs mb-8 text-[#00f0ff]">
           // initiating_handshake ...
