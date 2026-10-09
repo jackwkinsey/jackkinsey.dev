@@ -7,7 +7,7 @@ type Image = {
 	altText: string
 }
 
-type StoryCardData = {
+export type StoryCardData = {
 	type: 'app' | 'certification' | 'education' | 'game' | 'position'
 	start: Date
 	end?: Date | 'current'
